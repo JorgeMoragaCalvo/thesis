@@ -15,7 +15,7 @@ The application is an educational platform that covers part of the Optimization 
 - Progress tracking and analysis.
 - User management, authentication, and administration tools.
 
-## Agentes
+## Agents
 
 There are 5 agents, one for each topic covered. The student explicitly chooses which agent to use. There is no orchestrating agent. The agents are:
 
@@ -85,9 +85,32 @@ There are 5 agents, one for each topic covered. The student explicitly chooses w
 - Conclusions.
 - Future work.
 
-## Stack Tech
+## Architecture
 
-1. Backend: FastAPI.
-2. Frontend: Streamlit.
-3. Database: PostgreSQL.
-4. LLM: Gemini, OpenAI, Anthropic.
+### Backend
+
+Layered FastAPI service over SQLAlchemy + PostgreSQL
+
+```
+API Layer (FastAPI)  →  Business Logic (Services / Agents)  →  Data Access (SQLAlchemy)  →  PostgreSQL
+```
+
+JWT auth, role-based authorization, Pydantic validation on every endpoint, CORS + lifespan middleware, JSON columns for flexible metadata.
+
+### Frontend
+
+Streamlit multi-page app with singleton API client
+
+## Project Layout
+
+```diagram
+backend/app/
+  main.py            FastAPI app, agent registry, lifespan
+  agents/            5 specialist tutors over a shared BaseAgent
+  services/          LLM, conversation, assessment, grading, competency, spaced repetition
+  tools/             LangChain tools: solvers, visualizers, validators
+frontend/
+  app.py + pages/    Streamlit MPA (chat / assessment / progress / admin)
+data/course_materials/   Pre-built exercises per topic
+nginx/                   Reverse proxy + TLS configuration
+```
