@@ -50,3 +50,26 @@
 #### Key Takeaways
 
 1. El dominio de las técnicas trabajadas en la clase de matemáticas no se traduce en un mejor desempeño en la resolución de problemas.
+
+### 3. Teaching OR: automatic evaluation for linear programming modelling (Cambazard 2021).
+
+### Key Takeaways
+
+1. El _feedback_ inmediato sobre la validez de las soluciones de los alumnos ayuda a un mejor y más rápido entendimiento de los problemas de modelamieto de programación lineal.
+2. El objetivo es estimular el aprendizaje y autonomía de los estudiantes, al mismo tiempo que se mejora la calidad del tiempo que el docente les dedica.
+3. Caseine se basa en un _Moodle_: un sistema de gestión del aprendizaje (LMS), que proporciona un entorno de aprendizaje a los estudiantes y permite a los profesores supervisar el progreso de los estudiantes.
+
+### 4. Students’ procedural knowledge on simplex method in linear programming: An explanatory sequential design (Rellon 2024)
+
+#### Key Takeaways
+
+1. El conocimiento procedimental, o "saber cómo", es la habilidad práctica para ejecutar tareas, procesos o secuencias de acciones para lograr un fin. Se demuestra mediante la práctica.
+2. El método simplex es un procedimiento iterativo para encontrar la solución óptima de un modelo lineal.
+3. El documento destaca el bajo nivel de los estudiantes en el conocimiento procedimental al aprender programación lineal a través del método Simplex.
+
+### 5. Systematic Literature Review: How students learn linear programming with realistic mathematics education? (Octaria 2023).
+
+#### Key Takeaways
+
+- Los problemas matemáticos deben partir de situaciones problemas que resulten significativas para los estudiantes. Deben estar conectados con la realidad.
+- Se centra en la dificultad que tienen los estudiantes de traducir problemas verbales a notación matemática.

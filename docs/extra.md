@@ -5,3 +5,9 @@ Mi biografía no tiene mucho que aporte ni que decir. He vidido toda mi vida en 
 Por lo tanto, trataré de indagar los recuerdos más intrascendentes para abultar mi biografía puesto que no viví ni viviré todo ese mundo épico que brotaba inútil de mi imaginación y ego, y del cual era el protagonista.
 
 Por qué uno sabe lo que tiene que hacer y, sin embargo, no lo hace o no puede hacerlo.
+
+Por qué la vida me da miedo si supone que todo alguna vez se va a terminar.
+
+No supongas nada, la desgracia también va a alcanzar.
+
+La mayoría de la veces, la bomba de tiempo es tu propio cuerpo.

@@ -1,8 +1,8 @@
-# Problema
+# Problemas
 
-# P1
+## P1
 
-## Enunciado
+### Enunciado
 
 **Alimentación de vacas**
 Una granjera quiere asegurar de que sus vacas reciban un dieta diara que contenga al menos **22 gramos (g) de grasa**, **38g de carbohidratos** y **7 g de proteína**. Además, desea que la dieta diaria de cada vaca contenga como máximo **4g de sodio** y **5g de potasio**. Tiene acceso a 3 alimentos diferentes: alimento X, Y y Z que puede mezclar para crear una mezcla para las vacas.
@@ -13,7 +13,7 @@ Una granjera quiere asegurar de que sus vacas reciban un dieta diara que conteng
 
 Formular un programa lineal que determine una mezcla de los alimentos X, Y, y Z que satisfaga los requerimientos nutricionales de una vaca al menor costo posible.
 
-## Solución
+### Solución
 
 **Variables de decisión**
 
@@ -48,3 +48,36 @@ De potasio
 De no negatividad
 
 - $x, y, z \ge 0$
+
+## P2
+
+### Enunciado
+
+Se quiere producir mermelada de ruibardo y fresa. Un tarro de mermelada de ruibardo requiere de **1 kg de ruibardo** y **3 kg de azúcar** y la ganancia es de `$3000` por tarro. Un tarro de fresa requiere **2k de fresas** y **2 kg de azúcar** y la ganancia es de `$4000` por tarro. Las cantidades disponibles son 4 kg de ruibardo, 12 kg de fresas y 18 kg de azúcar. Se quiere maximizar la ganancia.
+
+### Solución
+
+**Variables de decisión**
+
+- $x_r = $ cantidad de tarros de ruibardo a producir.
+- $x_f = $ cantidad de tarros de fresas a producir.
+
+**Función Objetivo**
+Maximizar $\rightarrow$ $3000x_r + 4000x_f$
+
+**Restricciones**
+De ruibardo
+
+- $x_r \le 4$
+
+De fresas
+
+- $x_f \le 12$
+
+De azúcar
+
+- $3x_r + 2x_f \le 18$
+
+De no negatividad
+
+- $x_r, x_f \ge 0$
