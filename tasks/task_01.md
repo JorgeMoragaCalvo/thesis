@@ -20,3 +20,33 @@
 - Rocha, H., & Babo, A. (2024). Problem-solving and mathematical competence: A look to the relation during the study of Linear Programming
 
 ## Resumen papers
+
+### 1. Linear programming models: identifying common errors in engineering students’ work with complex word problems (Kenney 2019)
+
+#### Key Takeaways
+
+- Muchos estudiantes encuentra difícil traducir una descripción verbal de un problema a un modelo matemático válido. Traducir una idea o problema a símbolos.
+- Este estudio evaluó cinco problemas comunes a un curso introductio de Programación Lineal. En todos los problemas, fueron proporcionadas las variables de decisión.
+
+**Taxonomía de errores identificados**
+
+1. Variables de decisión. (Las variables de decisión en un modelo de programación lineal representan las decisiones que se deben tomar o las incógnitas).
+   - Errores: los estudiantes introducen sus propias variables nuevas que eran disruptivas o innecesarias (error principal)
+   - Introducir variables de decisión auxiliares sin conexión explícita con las variables existentes.
+2. Relación entre variables.
+   - Este error se encontró tanto en la función objetivo como en las restricciones.
+   - Coeficientes faltantes o incorrectos.
+   - Errores de inversión y de transponer los coeficientes de un problema, asociándolo con las variables incorrectas.
+   - Agrupar variables de decisión por caraterísticas equivocadas.
+3. Errrores de notación.
+   - Errores de subíndices.
+   - De símbolo de sumatoria.
+   - De desigualdad y/o igualdad.
+4. Errores de forma.
+   - Olvido de las restricciones de no negatividad.
+
+### 2. Problem-solving and mathematical competence: A look to the relation during the study of Linear Programming (Rocha 2024)
+
+#### Key Takeaways
+
+1. El dominio de las técnicas trabajadas en la clase de matemáticas no se traduce en un mejor desempeño en la resolución de problemas.
