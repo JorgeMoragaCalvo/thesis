@@ -2,11 +2,11 @@
 
 This document contains information about the thesis:
 
-- Development of a virtual agent based on artificial intelligence to support students of optimization methods in the Civil Engineering in Computer Science and Computer Engineering programs.
+- Development of a virtual agent based on artificial intelligence to support students of optimization methods. The course is mandatory in the Civil Engineering in Computer Science and Computer Engineering programs, and elective in the corresponding Execution Engineering programs.
 
 ## Core description
 
-The application is an educational platform that covers part of the Optimization Methods course syllabus, designed to support teaching and learning. Its main features are:
+The application is an educational platform that covers **part** of the Optimization Methods course syllabus, designed to support teaching and learning. Its main features are:
 
 - Multi-agent tutoring architecture.
 - Conversational learning interface.
@@ -17,7 +17,7 @@ The application is an educational platform that covers part of the Optimization 
 
 ## Agents
 
-There are 5 agents, one for each topic covered. The student explicitly chooses which agent to use. There is no orchestrating agent. The agents are:
+There are 5 agents, one for each topic covered (**part** of the Optimization Methods course syllabus). The student explicitly chooses which agent to use. There is no orchestrating agent. The agents are:
 
 1. Operations Research.
 2. Mathematical Modeling.

@@ -2,7 +2,7 @@
 
 ## Task
 
-1. Actualizar el contenido de las secciones [antecedentes](/chapters/chapter_01.md#antecedentes-y-motivación) y [plateamiento](/chapters/chapter_01.md#planteamiento-del-problema) junto con la sección [solución](/chapters/chapter_01.md#solución-propuesta) para que haya un hilo conductor entre las tres, ya que las afirmaciones que se hacen en el [documento](/chapters/chapter_01.md) no tienen ningún sustento desde la literatura.
+1. Actualizar el contenido de las secciones [antecedentes](/chapters/chapter_01.md#antecedentes-y-motivación) y [planteamiento](/chapters/chapter_01.md#planteamiento-del-problema) (este último completar) junto con la sección [solución](/chapters/chapter_01.md#solución-propuesta) para que haya un hilo conductor entre las tres, ya que las afirmaciones que se hacen en el [documento](/chapters/chapter_01.md) no tienen ningún sustento desde la literatura.
 2. Se buscaron _papers_ para dar mayor sustento al trabajo (dentro de los últimos 5 años) donde se pueda encontrar información respecto de las dificultades importantes que existen en la enseñanza/aprendizaje de los temas elegidos:
    - Modelado Matemático.
    - Programación Lineal.
