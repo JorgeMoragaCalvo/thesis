@@ -21,7 +21,7 @@
 
 ## Resumen papers
 
-### 1. Linear programming models: identifying common errors in engineering students’ work with complex word problems (Kenney 2019)
+### 1. Linear programming models: identifying common errors in engineering students’ work with complex word problems (Kenney, 2019)
 
 #### Key Takeaways
 
@@ -45,13 +45,13 @@
 4. Errores de forma.
    - Olvido de las restricciones de no negatividad.
 
-### 2. Problem-solving and mathematical competence: A look to the relation during the study of Linear Programming (Rocha 2024)
+### 2. Problem-solving and mathematical competence: A look to the relation during the study of Linear Programming (Rocha, 2024)
 
 #### Key Takeaways
 
 1. El dominio de las técnicas trabajadas en la clase de matemáticas no se traduce en un mejor desempeño en la resolución de problemas.
 
-### 3. Teaching OR: automatic evaluation for linear programming modelling (Cambazard 2021).
+### 3. Teaching OR: automatic evaluation for linear programming modelling (Cambazard, 2021).
 
 ### Key Takeaways
 
@@ -59,7 +59,7 @@
 2. El objetivo es estimular el aprendizaje y autonomía de los estudiantes, al mismo tiempo que se mejora la calidad del tiempo que el docente les dedica.
 3. Caseine se basa en un _Moodle_: un sistema de gestión del aprendizaje (LMS), que proporciona un entorno de aprendizaje a los estudiantes y permite a los profesores supervisar el progreso de los estudiantes.
 
-### 4. Students’ procedural knowledge on simplex method in linear programming: An explanatory sequential design (Rellon 2024)
+### 4. Students’ procedural knowledge on simplex method in linear programming: An explanatory sequential design (Rellon, 2024)
 
 #### Key Takeaways
 
@@ -67,9 +67,29 @@
 2. El método simplex es un procedimiento iterativo para encontrar la solución óptima de un modelo lineal.
 3. El documento destaca el bajo nivel de los estudiantes en el conocimiento procedimental al aprender programación lineal a través del método Simplex.
 
-### 5. Systematic Literature Review: How students learn linear programming with realistic mathematics education? (Octaria 2023).
+### 5. Systematic Literature Review: How students learn linear programming with realistic mathematics education? (Octaria, 2023).
 
 #### Key Takeaways
 
 - Los problemas matemáticos deben partir de situaciones problemas que resulten significativas para los estudiantes. Deben estar conectados con la realidad.
 - Se centra en la dificultad que tienen los estudiantes de traducir problemas verbales a notación matemática.
+
+### 6. Unravelling Error Patterns in Linear Programming: A Hierarchical Bayesian Approach (Gunawan, 2025)
+
+#### Key Takeaways
+
+Estudios previos han documentado los desafíos recurrentes al traducir escenarios del mundo real a modelos de PL, incluyendo la identificación errónea de la función objetivo, mala formulación de las restricciones y especificación inapropiada de las variables de decisión.
+
+Errores categorizados en 5 tipos:
+
+1. Omisión de restricciones (error importante).
+2. Inversión de signos (error importante).
+3. Identificación errónea de objetivos.
+4. Etiquetado erróneo de variables.
+5. Juicio erróneo de viabilidad.
+
+Entre el 40% y el 43% de la varianza total en algunos tipos de errores era atribuible a diferencias entre los estudiantes.
+
+### 7. Student Errors in Mathematics Word Problem: What Can Be Learned?
+
+#### Key Takeaways
