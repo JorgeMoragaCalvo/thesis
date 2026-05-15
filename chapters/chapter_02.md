@@ -105,21 +105,11 @@ LangChain \citep{Chase2026} es el framework de orquestación utilizado para coor
 
 ## ESTADO DEL ARTE
 
-La revisión del estado del arte se organiza en torno a los criterios que definen las brechas que el sistema propuesto aborda: (1) si el sistema utiliza LLM, (2) si implementa una arquitectura multi-agente, (3) si está especializado en el dominio de Métodos de Optimización, (4) si mantiene un modelo del estudiante persistente con evaluación adaptativa, (5) si ofrece una interfaz conversacional en español y (6) si es de código abierto.
+La revisión del estado del arte se organiza en torno a los criterios que definen las brechas que el sistema propuesto aborda: (1) si el sistema utiliza LLM, (2) si implementa una arquitectura multi-agente, (3) si está especializado en el dominio de Métodos de Optimización, (4) si mantiene un modelo del estudiante persistente con evaluación adaptativa, (5) si ofrece una interfaz conversacional en español y (6) si es de código abierto. A continuación se presenta, primero, el análisis de la literatura académica que aborda el mismo problema y, luego, el análisis de las soluciones de software actualmente disponibles.
 
-### Tutores conversacionales basados en LLM
-
-Khanmigo (Khan Academy + OpenAI, \citep{Khanacademy}) es el caso más prominente de integración de LLM en educación a escala. Opera como tutor socrático sobre GPT-4 y cubre un amplio espectro de materias. Su enfoque socrático ---formular preguntas en lugar de dar respuestas directas--- informó el diseño de los prompts del sistema desarrollado, que incluyen restricciones contra la entrega de soluciones. Sin embargo, Khanmigo es un agente único generalista: no segmenta el dominio en subdominios especializados, no cubre Investigación Operativa y su disponibilidad en español es parcial.
-
-Socratic (Google, \citep{SocraticWiki}) fue una aplicación que permitía a los estudiantes fotografiar problemas y recibir explicaciones; se fusionó con Google Lens en 2025. Su enfoque es puramente reactivo: no mantiene un modelo del estudiante ni adapta su comportamiento entre sesiones.
-
-Duolingo Max \citep{Duolingo2023} incorpora funcionalidades basadas en GPT-4 para la explicación de errores y la práctica conversacional en idiomas. Si bien es cierto que el dominio no es el mismo, es relevante como referencia de integración LLM en plataformas educativas masivas. Su arquitectura es de agente único con modelado implícito del estudiante.
+### Análisis desde la literatura
 
 El trabajo de \cite{Mollick2023} sistematizó el uso de GPT-4 como tutor universitario mediante prompts cuidadosamente diseñados, demostrando que los LLM de propósito general pueden actuar como tutores con la ingeniería de prompts adecuada, pero sin ofrecer una arquitectura replicable ni persistencia del estado del estudiante.
-
-La limitación transversal de estos sistemas es su naturaleza generalista: ninguno está especializado en Métodos de Optimización ni implementa una arquitectura multi-agente que segmente la complejidad del dominio.
-
-### Sistemas multi-agente educativos
 
 EduAgent \citep{Zhang2024} coordina agentes especializados para generar planes de estudio personalizados, demostrando que la descomposición en agentes mejora la coherencia pedagógica respecto a un agente único. La lección para el sistema desarrollado fue la validación del principio de especialización. Sin embargo, EduAgent opera en modo batch (genera materiales estáticos) y no implementa una interfaz conversacional en tiempo real.
 
@@ -131,27 +121,45 @@ El trabajo de \cite{10.1145/3631802.3631830} sobre CodeHelp introduce la separac
 
 \cite{Macina2025} proponen MathTutorBench, un benchmark que demuestra que la experticia en matemáticas no se traduce automáticamente en efectividad pedagógica: los modelos más potentes tienden a resolver problemas directamente. Esta evidencia reforzó la decisión de implementar restricciones de rol socrático en los prompts.
 
-### Herramientas para Investigación Operativa
+\cite{Moore2022} demostraron que GPT-3 puede clasificar preguntas según calidad pedagógica con niveles de concordancia comparables a evaluadores humanos, evidencia temprana de la viabilidad de LLM como evaluadores automáticos.
 
-Las herramientas existentes para Métodos de Optimización son, en su mayoría, solucionadores: LINGO, GAMS, CPLEX, OR-Tools \citep{GoogleOR}, PuLP \citep{Mitchell2011} y NEOS Server \citep{Czyzyk1998}. Reciben un modelo matemático y devuelven una solución óptima, pero no explican conceptos, no detectan errores de comprensión, no adaptan la dificultad y no conversan con el estudiante.
-
-ALEKS \citep{Aleks}, fundamentado en la Teoría de Espacios de Conocimiento \citep{Falmagne2015}, es la plataforma adaptativa de mayor implantación en matemáticas universitarias. Diagnostica el estado de conocimiento mediante evaluaciones breves y genera trayectorias individualizadas, con evidencia documentada de mejoras en tasas de aprobación \citep{McGraw-Hill2018}. Sin embargo, no cubre Investigación Operativa, no dispone de interfaz conversacional y opera con ejercicios de respuesta cerrada.
-
-Han emergido asistentes conversacionales para PL basados en GPT-4o, como Linear Programming Assistant y Operations Research / Linear Programming Solver \citep{YesChatAI2024a, YesChatAI2024b}. Demuestran que un LLM con prompts adecuados puede responder consultas técnicas con corrección aceptable. Sin embargo, no mantienen un modelo del estudiante (cada sesión es independiente), no implementan evaluación adaptativa, no ofrecen retroalimentación formativa estructurada, no están disponibles en español y son servicios comerciales sin código abierto.
-
-En el contexto local, el Departamento de Ingeniería Industrial de la Universidad de Santiago de Chile presentó, en el segundo semestre de 2024, la asistente virtual Maat, destinada a potenciar la experiencia educativa, lo que evidencia un interés institucional en la adopción de estas tecnologías \citep{Darvishi2024}. Por su parte, la Universidad de Chile cuenta con Sofía.
-
-### Evaluación empírica de ITS basados en LLM
-
-\cite{Moore2022} demostraron que GPT-3 puede clasificar preguntas según calidad pedagógica con niveles de concordancia comparables a evaluadores humanos, evidencia temprana de la viabilidad de LLM como evaluadores automáticos. \cite{Scaria2024} encontraron que el $78\%$ de las preguntas generadas por GPT-4 alineadas con Bloom eran de alta calidad, y que las instrucciones chain-of-thought con ejemplos producen mejores resultados que los prompts excesivamente detallados. Este hallazgo orientó el diseño de los prompts de generación de evaluaciones del sistema.
+\cite{Scaria2024} encontraron que el $78\%$ de las preguntas generadas por GPT-4 alineadas con Bloom eran de alta calidad, y que las instrucciones chain-of-thought con ejemplos producen mejores resultados que los prompts excesivamente detallados. Este hallazgo orientó el diseño de los prompts de generación de evaluaciones del sistema.
 
 \cite{Schmucker2024} evaluaron Ruffle\&Riley ($N = 200$) y encontraron un alto engagement pero sin diferencias significativas en las ganancias de aprendizaje a corto plazo medidas por pre/post-test, resultado consistente con \cite{VanLehn2011}: los efectos de la tutoría conversacional se manifiestan en comprensión profunda y transferencia, no en recuerdo inmediato.
 
-El meta-análisis de \cite{Ma2014} ($107$ estudios, $14.321$ participantes) encontró que los ITS producen ganancias significativas sobre la instrucción convencional ($g = 0.42$) y la instrucción computacional no inteligente ($g = 0.57$), sin diferencias significativas respecto a la tutoría humana individual ($g = -0.11$). \cite{Kulik2016} reportó un efecto mediano de $g = 0.66$ en 50 estudios controlados. Estos resultados corroboran la viabilidad del enfoque ITS.
+El meta-análisis de \cite{Ma2014} ($107$ estudios, $14.321$ participantes) encontró que los ITS producen ganancias significativas sobre la instrucción convencional ($g = 0.42$) y la instrucción computacional no inteligente ($g = 0.57$), sin diferencias significativas respecto a la tutoría humana individual ($g = -0.11$).
 
-Para la validación del sistema desarrollado, se planifica un diseño cuasi experimental de pre/post-test con estudiantes de la asignatura, combinado con una encuesta de usabilidad (SUS, \citep{Brooke1996SUS}) y análisis de registros de interacción.
+\cite{Kulik2016} reportó un efecto mediano de $g = 0.66$ en 50 estudios controlados, corroborando la viabilidad del enfoque ITS y motivando el diseño cuasi experimental de pre/post-test previsto para la validación del sistema desarrollado, complementado con una encuesta de usabilidad (SUS, \citep{Brooke1996SUS}) y análisis de registros de interacción.
 
-### Tabla comparativa y brechas identificadas
+### Análisis desde las soluciones actuales
+
+Khanmigo (Khan Academy + OpenAI, \citep{Khanacademy}) es el caso más prominente de integración de LLM en educación a escala. Opera como tutor socrático sobre GPT-4 y cubre un amplio espectro de materias. Su enfoque socrático ---formular preguntas en lugar de dar respuestas directas--- informó el diseño de los prompts del sistema desarrollado, que incluyen restricciones contra la entrega de soluciones. Sin embargo, Khanmigo es un agente único generalista: no segmenta el dominio en subdominios especializados, no cubre Investigación Operativa y su disponibilidad en español es parcial.
+
+Socratic (Google, \citep{SocraticWiki}) fue una aplicación que permitía a los estudiantes fotografiar problemas y recibir explicaciones; se fusionó con Google Lens en 2025. Su enfoque es puramente reactivo: no mantiene un modelo del estudiante ni adapta su comportamiento entre sesiones.
+
+Duolingo Max \citep{Duolingo2023} incorpora funcionalidades basadas en GPT-4 para la explicación de errores y la práctica conversacional en idiomas. Si bien el dominio no es el mismo, es relevante como referencia de integración LLM en plataformas educativas masivas. Su arquitectura es de agente único con modelado implícito del estudiante.
+
+ALEKS \citep{Aleks}, fundamentado en la Teoría de Espacios de Conocimiento \citep{Falmagne2015}, es la plataforma adaptativa de mayor implantación en matemáticas universitarias. Diagnostica el estado de conocimiento mediante evaluaciones breves y genera trayectorias individualizadas, con evidencia documentada de mejoras en tasas de aprobación \citep{McGraw-Hill2018}. Sin embargo, no cubre Investigación Operativa, no dispone de interfaz conversacional y opera con ejercicios de respuesta cerrada.
+
+LINGO es un solucionador comercial ampliamente utilizado en docencia e industria para problemas de PL, PE y PNL, con un lenguaje algebraico propio. Recibe un modelo matemático y devuelve una solución óptima, pero no explica conceptos, no detecta errores de comprensión, no adapta la dificultad ni conversa con el estudiante.
+
+GAMS (General Algebraic Modeling System) es un entorno de modelado algebraico comercial orientado a problemas de optimización de gran escala, con conectores a múltiples solvers. Comparte con los demás solucionadores la limitación de ser una herramienta de ejecución, no de enseñanza: no provee andamiaje pedagógico ni retroalimentación formativa sobre los modelos formulados por el estudiante.
+
+CPLEX (IBM) es un solver comercial de alto rendimiento para PL, PE y MIP, ampliamente referenciado en literatura académica. Su valor docente se limita a la verificación numérica de modelos ya formulados; no ofrece capacidades conversacionales, ni adaptación al nivel del estudiante, ni explicación del procedimiento de resolución.
+
+OR-Tools \citep{GoogleOR} es la suite de optimización de código abierto de Google, que cubre PL, PE, programación con restricciones y ruteo. Aporta accesibilidad y APIs en varios lenguajes, pero, al igual que los solvers anteriores, su rol es algorítmico: no implementa modelo del estudiante, no detecta confusión ni guía el modelado.
+
+PuLP \citep{Mitchell2011} es una librería de Python de código abierto para formular problemas de PL/PE y delegar su resolución a solvers externos. Es útil como herramienta didáctica para introducir el modelado en código, pero no constituye un sistema tutorial: carece de evaluación adaptativa, retroalimentación y diálogo.
+
+NEOS Server \citep{Czyzyk1998} es un servicio en línea gratuito que ejecuta solvers de optimización sobre modelos enviados por el usuario. Facilita el acceso a solvers comerciales con fines académicos, pero su interacción es estrictamente de envío-respuesta: sin contexto pedagógico, sin modelo del estudiante y sin interfaz conversacional.
+
+Han emergido asistentes conversacionales para PL basados en GPT-4o, como Linear Programming Assistant y Operations Research / Linear Programming Solver \citep{YesChatAI2024a, YesChatAI2024b}. Demuestran que un LLM con prompts adecuados puede responder consultas técnicas con corrección aceptable. Sin embargo, no mantienen un modelo del estudiante (cada sesión es independiente), no implementan evaluación adaptativa, no ofrecen retroalimentación formativa estructurada, no están disponibles en español y son servicios comerciales sin código abierto.
+
+En el contexto local, el Departamento de Ingeniería Industrial de la Universidad de Santiago de Chile presentó, en el segundo semestre de 2024, la asistente virtual Maat, destinada a potenciar la experiencia educativa, lo que evidencia un interés institucional en la adopción de estas tecnologías \citep{Darvishi2024}.
+
+Por su parte, la Universidad de Chile cuenta con Sofía, asistente conversacional institucional orientada al apoyo académico transversal. Al igual que Maat, no está especializada en Métodos de Optimización ni implementa una arquitectura multi-agente segmentada por subdominios.
+
+#### Tabla comparativa
 
 La Tabla~\ref{table:compare} sintetiza las características de los sistemas revisados. Los criterios de comparación corresponden a las funcionalidades que la literatura identifica como determinantes para la efectividad de un ITS en dominios técnicos: uso de LLM (capacidad conversacional), arquitectura multi-agente (especialización de dominio), especificidad en OR (cobertura del dominio objetivo), evaluación adaptativa (ajuste al nivel del estudiante), interfaz en español (accesibilidad para la población objetivo), código abierto (replicabilidad) y detección de confusión (adaptación en tiempo real).
 
@@ -169,3 +177,7 @@ La Tabla~\ref{table:compare} sintetiza las características de los sistemas revi
 | LINGO / GAMS      | :x:                | :x:                | :white_check_mark: | :x:                   | :x:                | Parcial            | :x:                 |
 | LP Assistant      | :white_check_mark: | :x:                | :white_check_mark: | :x:                   | :x:                | :x:                | :x:                 |
 | Sistema propuesto | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:    | :white_check_mark: | :white_check_mark: | :white_check_mark:  |
+
+#### Discusión
+
+La lectura por columnas de la Tabla~\ref{table:compare} permite identificar las brechas que ninguna solución existente cubre de manera simultánea. En la columna de cobertura del dominio, ALEKS aporta evaluación adaptativa robusta en matemáticas universitarias pero no incorpora Investigación Operativa, mientras que los solvers (LINGO, GAMS, CPLEX, OR-Tools, PuLP, NEOS Server) sí cubren el dominio pero operan como herramientas de cálculo y no como sistemas tutoriales. Khanmigo, Socratic y Duolingo Max despliegan capacidad conversacional basada en LLM, pero permanecen como agentes únicos generalistas sin segmentación del dominio. EduAgent demuestra el principio de descomposición multi-agente, pero lo hace en modo batch para generar materiales, sin interfaz conversacional en tiempo real ni especificidad en optimización. Los asistentes específicos para PL (Linear Programming Assistant, OR/LP Solver) muestran la viabilidad técnica de un tutor LLM en el dominio, pero no implementan modelo persistente del estudiante, no ofrecen evaluación adaptativa, no están disponibles en español y son servicios comerciales cerrados. En el plano local, Maat y Sofía evidencian el interés institucional por estas tecnologías, pero no están especializadas en Métodos de Optimización ni adoptan una arquitectura multi-agente segmentada por subdominios. La accesibilidad para la población objetivo (interfaz en español) y la replicabilidad académica (código abierto) son, además, atributos prácticamente ausentes en el conjunto de soluciones revisadas. En síntesis, ninguna de las alternativas existentes integra simultáneamente: (i) tutoría conversacional basada en LLM, (ii) arquitectura multi-agente segmentada por subdominio, (iii) cobertura específica de los Métodos de Optimización, (iv) evaluación adaptativa con modelo del estudiante persistente, (v) interfaz en español y (vi) disponibilidad como código abierto. Esta combinación, que la literatura señala como condición necesaria para una intervención efectiva en dominios técnicos, constituye precisamente la propuesta de este trabajo.
