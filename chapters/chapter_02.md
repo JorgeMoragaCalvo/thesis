@@ -50,7 +50,7 @@ En el sistema desarrollado, estos cuatro módulos se implementan de la siguiente
 El modelo referencial en la literatura es Bayesian Knowledge Tracing (BKT) de \cite{Corbett1994}, un modelo oculto de Markov que estima probabilísticamente si el estudiante domina cada componente de conocimiento. El sistema desarrollado no implementa BKT; en su lugar, se optó por un modelo determinístico basado en promedio exponencialmente ponderado (EWA), que resultó más adecuado para el contexto de uso:
 
 - Cada concepto del dominio tiene un puntaje de maestría entre $0.0$ y $1.0$, actualizado tras cada evaluación: $score = \alpha \cdot score_{nuevo} + (1 - \alpha) \cdot score_{anterior}$, con $\alpha = 0.3$.
-- Se definen cinco niveles de maestría con umbrales y requisitos mínimos de intentos: Not Started (0 intentos), Novice ($< 0.30$), Developing} ($\geq 0.30$), Proficient ($\geq 0.60$ y $\geq 3$ intentos) y Mastered ($\geq 0.85$ y $\geq 5$ intentos).
+- Se definen cinco niveles de maestría con umbrales y requisitos mínimos de intentos: Not Started (0 intentos), Novice ($< 0.30$), Developing ($\geq 0.30$), Proficient ($\geq 0.60$ y $\geq 3$ intentos) y Mastered ($\geq 0.85$ y $\geq 5$ intentos).
 
 Este modelo se complementa con un sistema de repetición espaciada \citep{Ericsson2016} (SM-2) para la retención a largo plazo. El algoritmo SM-2 programa revisiones con intervalos crecientes $[1, 3, 7, 14, 30, 60]$ días, ajustados por un factor de facilidad que se modifica según la calidad de cada respuesta (escala $0-5$). Si la calidad es inferior a $3$, el intervalo se reinicia a $1$ día.
 
@@ -95,7 +95,7 @@ Se eligió un patrón de selección directa, es decir, el estudiante selecciona 
 
 Los agentes del sistema extienden sus capacidades mediante el patrón de uso de herramientas (tool use), documentado por \cite{Xi2023} y \cite{Wang2025}. Cada agente puede invocar herramientas especializadas implementadas como extensiones de BaseTool de LangChain:
 
-- Herramientas de modelado: validación de modelos matemáticos (ModelValidatorTool), resolución de problemas (ProblemSolverTool), visualización de regiones factibles (RegionVisualizerTool), práctica de ejercicios (xercisePracticeTool) y validación de formulaciones estudiantiles (ExerciseValidatorTool).
+- Herramientas de modelado: validación de modelos matemáticos (ModelValidatorTool), resolución de problemas (ProblemSolverTool), visualización de regiones factibles (RegionVisualizerTool), práctica de ejercicios (ExercisePracticeTool) y validación de formulaciones estudiantiles (ExerciseValidatorTool).
 - Herramientas de IO: clasificación de problemas de optimización (ProblemClassifierTool) y exploración de contexto histórico (TimelineExplorerTool).
 - Herramienta de repaso: gestión de sesiones de repetición espaciada (SpacedRepetitionReviewTool).
 

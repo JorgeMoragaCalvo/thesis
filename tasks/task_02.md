@@ -4,14 +4,13 @@
 
 ## Marco Teórico
 
-Todos aquellos conceptos teóricos necesarios que se requieren para poder entender el trabajo de memoria. Estos conceptos deben estar
-sustentados desde libros del área y/o papers.
+Todos aquellos conceptos teóricos necesarios que se requieren para poder entender el trabajo. Estos conceptos deben estar sustentados desde libros del área y/o papers.
 
 ## Estado del Arte
 
 ### Análisis desde la literatura
 
-Describir todos aquellos trabajos reportados en los papers (IEEExplore, Wiley, ScienceDirect, Springer) que de alguna manera intentaron solucionar el mismo problema de este trabajo de memoria. Un párrafo por cada paper. 8 a 15 lineas por párrafo. Se deberían incluir como mínimo 7 papers (7 párrafos).
+Describir todos aquellos trabajos reportados en los papers (IEEExplore, Wiley, ScienceDirect, Springer) que de alguna manera intentaron solucionar el mismo problema de este trabajo de memoria. Un párrafo por cada paper. 8 a 15 líneas por párrafo. Se deberían incluir como mínimo 7 papers (7 párrafos).
 
 ### Análisis desde las soluciones actuales
 
