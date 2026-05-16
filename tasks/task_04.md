@@ -148,7 +148,7 @@ but no database layer appears. A logical architecture should show persistence.
 
 Add something like
 
-```mermain
+```mermaid
 subgraph Persistence["Persistence Layer"]
 PG[(PostgreSQL)]
 Vec[(Vector DB)]
