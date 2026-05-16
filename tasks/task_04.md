@@ -28,6 +28,12 @@ En todas las vistas se requiere **incluir una imagen que describa de manera grá
 
 The Logical View organizes the system into modules or components that represent the main functionalities, such as authentication, payment processing, or user management, and shows how these relate and interact with each other to meet the system's functional requirements. This view facilitates understanding the functional structure and responsibilities of each component, allowing a clear view of **what** each part of the system does.
 
+Logical view summary:
+
+- Shows the key abstractions in the system as objects or classes of objects.
+- It should be possible to relate the system requirements to the entities.
+- Class diagrams or communication diagrams are used.
+
 ### Deployment View
 
 Describe the physical infrastructure on which the system runs, including servers, networks, and other resources needed to support the application. This view assigns the various software components to the infrastructure, ensuring that the system meets non-functional requirements such as availability, scalability, and performance.
