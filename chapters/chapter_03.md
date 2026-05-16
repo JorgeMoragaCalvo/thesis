@@ -33,9 +33,9 @@ Las historias de usuario (HU) describen las funcionalidades del sistema desde la
 
 Como estudiante nuevo, quiero registrar una cuenta con mi nombre, correo institucional y contraseña, para poder acceder a la plataforma de tutorías y realizar un seguimiento de mi progreso de aprendizaje.
 
-| Story Points | Prioridad |
-|--------------|-----------|
-| 8            | Alta      |
+| Story Points | Prioridad      |
+|--------------|----------------|
+| 8            | Imprescindible |
 
 Criterios de aceptación:
 
@@ -68,9 +68,9 @@ Feature: Registro de usuario
 
 Como estudiante registrado, quiero iniciar sesión con mi correo electrónico y contraseña, para poder acceder a mi entorno de aprendizaje personalizado y a mi historial de conversaciones.
 
-| Story Points | Prioridad |
-|--------------|-----------|
-| 5            | Alta      |
+| Story Points | Prioridad      |
+|--------------|----------------|
+| 5            | Imprescindible |
 
 Criterios de aceptación:
 
@@ -101,9 +101,9 @@ Feature: Inicio de sesión
 
 Como estudiante que ha iniciado sesión, quiero cerrar mi sesión de forma segura, para poder proteger mi cuenta al usar dispositivos compartidos.
 
-| Story Points | Prioridad |
-|--------------|-----------|
-| 3            | Alta      |
+| Story Points | Prioridad      |
+|--------------|----------------|
+| 3            | Imprescindible |
 
 Criterios de aceptación:
 
@@ -129,9 +129,9 @@ Feature: Cierre de sesión
 
 Como estudiante, quiero seleccionar un tema específico de optimización entre los agentes disponibles, para poder recibir tutoría especializada que se ajuste a mis necesidades de aprendizaje.
 
-| Story Points | Prioridad |
-|--------------|-----------|
-| 5            | Alta      |
+| Story Points | Prioridad      |
+|--------------|----------------|
+| 5            | Imprescindible |
 
 Criterios de aceptación:
 
@@ -155,9 +155,9 @@ Feature: Selección de tema de tutoría
 
 Como estudiante, quiero formular preguntas en lenguaje natural y recibir respuestas contextualmente relevantes, para poder aprender conceptos de optimización de forma interactiva y conversacional.
 
-| Story Points | Prioridad |
-|--------------|-----------|
-| 8            | Alta      |
+| Story Points | Prioridad      |
+|--------------|----------------|
+| 8            | Imprescindible |
 
 Criterios de aceptación:
 
@@ -181,9 +181,9 @@ Feature: Conversación con el tutor
 
 Como estudiante con dificultades para comprender un concepto, quiero que el sistema detecte mi confusión y me ofrezca explicaciones alternativas, para poder comprender los temas difíciles mediante distintos enfoques.
 
-| Story Points | Prioridad |
-|--------------|-----------|
-| 8            | Media     |
+| Story Points | Prioridad      |
+|--------------|----------------|
+| 8            | Debería        |
 
 Criterios de aceptación:
 
@@ -212,9 +212,9 @@ Feature: Detección de confusión y andamiaje pedagógico
 
 Como estudiante, quiero que el sistema me sugiera sesiones de repaso de conceptos previamente estudiados según el algoritmo SM-2, para poder consolidar el aprendizaje a largo plazo y reactivar lo aprendido antes de olvidarlo.
 
-| Story Points | Prioridad |
-|--------------|-----------|
-| 8            | Media     |
+| Story Points | Prioridad      |
+|--------------|----------------|
+| 8            | Debería        |
 
 Criterios de aceptación:
 
@@ -239,9 +239,9 @@ Feature: Repaso espaciado (algoritmo SM-2)
 
 Como estudiante, quiero crear evaluaciones de práctica seleccionando un tema y un nivel de dificultad, para poder evaluar mi comprensión de conceptos específicos de optimización.
 
-| Story Points | Prioridad |
-|--------------|-----------|
-| 13           | Alta      |
+| Story Points | Prioridad      |
+|--------------|----------------|
+| 13           | Imprescindible |
 
 Criterios de aceptación:
 
@@ -266,9 +266,9 @@ Feature: Generación de evaluaciones
 
 Como estudiante, quiero enviar mis respuestas y recibir retroalimentación detallada junto con una calificación, para poder comprender mis errores y mejorar mi nivel de dominio.
 
-| Story Points | Prioridad |
-|--------------|-----------|
-| 8            | Alta      |
+| Story Points | Prioridad      |
+|--------------|----------------|
+| 8            | Imprescindible |
 
 Criterios de aceptación:
 
@@ -294,9 +294,9 @@ Feature: Envío y retroalimentación de evaluaciones
 
 Como estudiante, quiero revisar mis evaluaciones anteriores filtradas por tema, para poder hacer un seguimiento de mi progreso y reforzar las áreas en las que tengo dificultades.
 
-| Story Points | Prioridad |
-|--------------|-----------|
-| 5            | Media     |
+| Story Points | Prioridad      |
+|--------------|----------------|
+| 5            | Debería        |
 
 Criterios de aceptación:
 
@@ -326,9 +326,9 @@ Feature: Historial de evaluaciones
 
 Como estudiante, quiero visualizar un panel de progreso con mi perfil, niveles de conocimiento y estadísticas, para poder comprender mi estado general de aprendizaje en la plataforma.
 
-| Story Points | Prioridad |
-|--------------|-----------|
-| 8            | Alta      |
+| Story Points | Prioridad      |
+|--------------|----------------|
+| 8            | Imprescindible |
 
 Criterios de aceptación:
 
@@ -356,9 +356,9 @@ Feature: Dashboard de progreso del estudiante
 
 Como estudiante, quiero ver el nivel de dominio que tengo en cada concepto del temario (según la taxonomía de Bloom), para poder identificar conceptos específicos en los que debo profundizar.
 
-| Story Points | Prioridad |
-|--------------|-----------|
-| 8            | Media     |
+| Story Points | Prioridad      |
+|--------------|----------------|
+| 8            | Debería        |
 
 Criterios de aceptación:
 
@@ -380,9 +380,9 @@ Feature: Seguimiento de competencias por concepto
 
 Como estudiante, quiero recibir consejos de aprendizaje personalizados según mi rendimiento y actividad, para poder optimizar mi enfoque de estudio.
 
-| Story Points | Prioridad |
-|--------------|-----------|
-| 5            | Baja      |
+| Story Points | Prioridad      |
+|--------------|----------------|
+| 5            | Podría         |
 
 Criterios de aceptación:
 
@@ -406,9 +406,9 @@ Feature: Consejos de aprendizaje personalizados
 
 Como administrador, quiero listar, activar y desactivar cuentas de usuario, para poder controlar el acceso a la plataforma y deshabilitar cuentas inadecuadas.
 
-| Story Points | Prioridad |
-|--------------|-----------|
-| 8            | Alta      |
+| Story Points | Prioridad      |
+|--------------|----------------|
+| 8            | Imprescindible |
 
 Criterios de aceptación:
 
@@ -437,9 +437,9 @@ Feature: Gestión de usuarios por el administrador
 
 Como administrador, quiero asignar el rol de usuario o administrador a las cuentas, para poder delegar funciones de administración cuando sea necesario.
 
-| Story Points | Prioridad |
-|--------------|-----------|
-| 5            | Media     |
+| Story Points | Prioridad      |
+|--------------|----------------|
+| 5            | Debería        |
 
 Criterios de aceptación:
 
@@ -463,9 +463,9 @@ Feature: Asignación de roles
 
 Como administrador, quiero autorizar registros con dominios de correo distintos a `@usach.cl`, para poder incluir a usuarios externos invitados (por ejemplo, docentes colaboradores o estudiantes de otras instituciones).
 
-| Story Points | Prioridad |
-|--------------|-----------|
-| 5            | Media     |
+| Story Points | Prioridad      |
+|--------------|----------------|
+| 5            | Debería        |
 
 Criterios de aceptación:
 
@@ -495,9 +495,9 @@ Feature: Autorización de dominios de correo externos
 
 Como administrador, quiero ver estadísticas agregadas del sistema (totales de usuarios, conversaciones y evaluaciones), para poder tener una visión general del uso de la plataforma.
 
-| Story Points | Prioridad |
-|--------------|-----------|
-| 5            | Alta      |
+| Story Points | Prioridad      |
+|--------------|----------------|
+| 5            | Imprescindible |
 
 Criterios de aceptación:
 
@@ -519,9 +519,9 @@ Feature: Estadísticas del sistema
 
 Como administrador, quiero consultar métricas de uso (usuarios activos diarios, duración promedio de sesiones, horas pico, popularidad de páginas, popularidad de agentes y engagement), para poder tomar decisiones informadas sobre la evolución de la plataforma.
 
-| Story Points | Prioridad |
-|--------------|-----------|
-| 13           | Alta      |
+| Story Points | Prioridad      |
+|--------------|----------------|
+| 13           | Imprescindible |
 
 Criterios de aceptación:
 
@@ -554,6 +554,7 @@ Feature: Analítica de uso
     When carga la pestaña correspondiente
     Then el sistema muestra indicadores como tasa de retención, frecuencia de uso y eventos de actividad agregados
 ```
+
 ## 3.2. Mapping entre las características del sistema y los requisitos de usuario
 
 ## 3.3. Requisitos no funcionales
