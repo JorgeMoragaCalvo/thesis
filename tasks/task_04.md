@@ -34,6 +34,172 @@ Logical view summary:
 - It should be possible to relate the system requirements to the entities.
 - Class diagrams or communication diagrams are used.
 
+#### Main architectural problems in currently diagram
+
+1. The API layer is mixing responsibilities
+
+Currently:
+
+```
+Auth --> Routes --> Registry --> Agents
+```
+
+This suggests:
+
+- authentication
+- routing
+- orchestration
+- dependency resolution
+
+Are all happening inside the API layer. That becomes messy over time. A better separation maybe:
+
+```
+FastAPI Routes
+↓
+Application/Orchestration Layer
+↓
+Agents / Services
+```
+
+Meaning:
+
+- routes only validate HTTP requests/responses
+- orchestration coordinates workflows
+- agents solve tasks
+
+Right now your agents are acting partly like application services.
+
+---
+
+#### Recommended fix / update
+
+Add an orchestration/application layer.
+
+Example:
+
+```mermaid
+subgraph App["Application Layer"]
+    Tutor["tutoring_orchestrator"]
+    Workflow["workflow_manager"]
+end
+```
+
+Then:
+
+```
+Routes --> App --> Registry --> Agents
+```
+
+This is MUCH cleaner.
+
+2. Agents directly using tools AND services can become chaotic
+
+You currently have:
+
+```
+Agents --> Services
+Agents --> Tools
+```
+
+This is acceptable for MVPs, but eventually creates:
+
+- duplicated logic
+- hidden dependencies
+- inconsistent workflows
+
+because some logic ends up in tools and some in services.
+
+Better pattern. Prefer:
+
+```
+Agents
+↓
+Services
+↓
+Tools
+```
+
+Meaning:
+
+- agents orchestrate reasoning
+- services implement business/application logic
+- tools are infrastructure/utilities
+
+For example, BETTER:
+
+```
+Agent → optimization_service → PuLP
+```
+
+Otherwise agents become giant god-objects.
+
+3. Missing persistence/data layer
+
+This is the largest omission. The system clearly has:
+
+- conversations
+- progress
+- assessments
+- spaced repetition
+- competencies
+- analytics
+
+but no database layer appears. A logical architecture should show persistence.
+
+Add something like
+
+```mermain
+subgraph Persistence["Persistence Layer"]
+PG[(PostgreSQL)]
+Vec[(Vector DB)]
+Redis[(Redis Cache)]
+end
+```
+
+Then: `Services --> Persistence`. This is essential.
+
+Recommended revised architecture. Something closer to:
+
+```diagram
+Frontend (Streamlit)
+
+        ↓
+
+FastAPI Routes / Controllers
+
+        ↓
+
+Application Layer
+(workflows/orchestrators)
+
+        ↓
+
+Agent Layer
+(specialized agents)
+
+        ↓
+
+Domain Services
+(progress, grading, competency)
+
+        ↓
+
+Infrastructure Services
+(LLM, tools, vector DB, PostgreSQL)
+
+        ↓
+
+External Providers
+(OpenAI, Gemini, Anthropic)
+```
+
+The biggest missing pieces are:
+
+- persistence layer
+- orchestration/application layer
+- clearer dependency direction
+- better separation between services and tools
+
 ### Deployment View
 
 Describe the physical infrastructure on which the system runs, including servers, networks, and other resources needed to support the application. This view assigns the various software components to the infrastructure, ensuring that the system meets non-functional requirements such as availability, scalability, and performance.
