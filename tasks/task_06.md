@@ -19,4 +19,10 @@ Se debe construir un cuestionario cuyas preguntas nos ayuden a obtener informaci
 
 Presentar y describir los resultados obtenidos desde los cuestionarios respondidos por los usuarios.
 
+### 6.3. Análisis y discusión con respecto a cómo se cumple con el problema planteado
 
+Análisis y discusión con respecto a cómo los resultados obtenidos dan evidencia que de alguna manera se mitiga el problema descrito en el [Capítulo 1](/chapters/chapter_01.md). Todas las ideas que se describan en esta discusión deben estar sustentadas con los resultados obtenidos en el cuestionario SUS (sección 5.2) y el cuestionario de la sección 6.1.
+
+### 6.4 Análisis y discusión de los resultados respecto del propósito de la solución
+
+Análisis y discusión con respecto a cómo los resultados obtenidos dan evidencia que se cumple con el propósito de la solución descrito en el Capítulo 1. Todas las ideas que se describan en esta discusión deben estar sustentadas con los resultados obtenidos en el cuestionario SUS (sección 5.2) y el cuestionario de la sección 6.1.
