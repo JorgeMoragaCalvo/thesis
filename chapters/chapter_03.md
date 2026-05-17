@@ -1,5 +1,7 @@
 # 3. Análisis y definición de los requisitos
 
+Este capítulo presenta el análisis y la definición de requisitos del agente virtual educativo, formalizados según los artefactos propios de la metodología SCRUM adoptada en el proyecto. La especificación parte del Product Backlog, donde se listan y priorizan las características del sistema, y se descompone en historias de usuario que describen el comportamiento esperado desde la perspectiva del estudiante y del administrador. El capítulo se organiza en tres secciones. Primero, se detallan los requisitos funcionales mediante historias de usuario con criterios de aceptación expresados en Gherkin. A continuación, se establece la trazabilidad entre las características del Product Backlog y las historias de usuario asociadas. Por último, se enuncian los requisitos no funcionales que condicionan la arquitectura y la operación de la plataforma.
+
 El Product Backlog (PB) representa la lista priorizada de características, mejoras y requisitos técnicos necesarios para la entrega del agente virtual educativo. Los elementos se organizan por prioridad mediante el método MoSCoW (Imprescindible, Debería, Podría, No) y se estiman mediante puntos de historia según su complejidad relativa (ver Tabla \ref{table:backlog}).
 
 | ID   | Característica                              | Prioridad | Puntaje | Sprint |
