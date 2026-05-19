@@ -19,9 +19,9 @@ Se deben mostrar los resultados de cargar el sistema en diferentes navegadores (
 
 #### 5.2.2 Usabilidad
 
-Se debe reportar los resultados de haber aplicado el cuestionario SUS a 10 personas del público objetivo del proyecto. Mas detalles de este cuestionario en: [cuestionario] (https://medium.com/thinking-design/the-system-usability-scale-how-its-used-in-ux-b823045270b7)
+Se debe reportar los resultados de haber aplicado el cuestionario SUS a 10 personas del público objetivo del proyecto. Mas detalles de este cuestionario en: [cuestionario](https://medium.com/thinking-design/the-system-usability-scale-how-its-used-in-ux-b823045270b7)
 
-Indicar en el texto que se usaron 10 usuarios siguiendo la recomendación de Jakob Nielsen quien dice que no es necesario muchos usuarios para este tipo de pruebas. Incluso solo se necesitan 5 usuarios. [Nielsen] (https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/)
+Indicar en el texto que se usaron 10 usuarios siguiendo la recomendación de Jakob Nielsen quien dice que no es necesario muchos usuarios para este tipo de pruebas. Incluso solo se necesitan 5 usuarios. [Nielsen](https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/)
 
 #### 5.2.3 Autenticación y Autorización
 Se debe realizar tres tipos de pruebas. De autenticación (usuario y psw). De Autorización, ingresando con cada tipo de usuario y tratando de acceder a opciones que no le corresponden, y verificando que el sistema no le deje usar la opción.
