@@ -1,4 +1,4 @@
-# 5. Verificación y Validación
+# Capítulo 5. Verificación y Validación
 ## 5.1 Descripción verificación y validación de los Requisitos Funcionales
 
 ## 5.2 Descripción verificación y validación de los Requisitos No Funcionales
